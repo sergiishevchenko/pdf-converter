@@ -1,12 +1,9 @@
-# from airtable import airtable
+from airtable import Airtable
 from django.shortcuts import render
-import logging
-
-logger = logging.getLogger(__name__)
-
-# at = airtable.Airtable('BASE_ID', 'API_KEY')
-# at.get('TABLE_NAME')
+from converter.config import base_key, api_key
 
 
 def init(request):
+    airtable = Airtable(base_key, 'Table 1', api_key)
+    print(airtable.get_all())
     return render(request, 'diploma.html')
