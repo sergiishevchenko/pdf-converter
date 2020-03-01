@@ -109,3 +109,5 @@ venv.bak/
 .github 
 .DS_Store
 sass/
+
+config.py
