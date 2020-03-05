@@ -6,14 +6,13 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="http://127.0.0.1:8000/static/css/style.css" rel="stylesheet">
     <title>Diploma</title>
     </head>
     <body>
         <section class="diploma">
             <div class="container">
-                <div class="diploma-title"><div>СЕРТИФИКАТ</div></div>
+                <div class="diploma-title">СЕРТИФИКАТ</div>
                 <div class="diploma-header"><span style="color:rgb(24, 24, 250);">L</span>EARN <span style="color: orange">P</span>YTHON</div>
                 <div class="diploma-text" style="margin-top: 30px">Настоящий сертификат удостоверяет, что</div>
                 <div class="diploma-block">
@@ -24,15 +23,15 @@
                 <div class="diploma-text">Выдан: <span style="color:blue; font-weight: 600;">{{ date }} г.<span></div>
                 <div class="diploma-signatures">
                     <div class="diploma-signatures__item">
-                        <div class="diploma-signatures__item-signature"></div>
+                        <img src="http://127.0.0.1:8000/static/img/sign.gif" style="width: 150px; height: 150px;">
                         <div class="diploma-signatures__item-text">И.Лебедев</div>
                     </div>
                     <div class="diploma-signatures__item">
-                        <div class="diploma-signatures__item-signature"></div>
+                        <img src="http://127.0.0.1:8000/static/img/sign.gif" style="width: 150px; height: 150px;">
                         <div class="diploma-signatures__item-text">М.Корнеев</div>
                     </div>
                     <div class="diploma-signatures__item">
-                        <div class="diploma-signatures__item-signature"></div>
+                        <img src="http://127.0.0.1:8000/static/img/sign.gif" style="width: 150px; height: 150px;">
                         <div class="diploma-signatures__item-text">В.Филонов</div>
                     </div>
                 </div>
