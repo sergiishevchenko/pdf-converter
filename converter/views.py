@@ -33,5 +33,5 @@ def init(request):
                 ],
                 'no-outline': None
             }
-            pdfkit.from_string(result, '{}-{}.pdf'.format(name, surname), configuration=config, options=options)
+            pdfkit.from_string(result, 'result/' + '{}-{}.pdf'.format(name, surname), configuration=config, options=options)
     return render(request, 'diploma.html')
