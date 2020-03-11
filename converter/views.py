@@ -3,7 +3,6 @@ from django.shortcuts import render
 from converter.config import base_key, api_key
 import pdfkit
 from django.template.loader import get_template
-from django.http import HttpResponse
 
 
 def init(request):
