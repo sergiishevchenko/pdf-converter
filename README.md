@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/sergiishevchenko/pdf-converter.svg?branch=master)](https://travis-ci.org/sergiishevchenko/pdf-converter)
 [![Requirements Status](https://requires.io/github/sergiishevchenko/pdf-converter/requirements.svg?branch=master)](https://requires.io/github/sergiishevchenko/pdf-converter/requirements/?branch=master)
+[![Python 3.7](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/release/python-374/)
+
 # PDF-Converter
 
 ## How to start?
