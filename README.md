@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/sergiishevchenko/pdf-converter.svg?branch=master)](https://travis-ci.org/sergiishevchenko/pdf-converter)
+
 # PDF-Converter
 
 ## How to start?
