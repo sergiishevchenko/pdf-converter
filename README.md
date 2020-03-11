@@ -9,7 +9,7 @@ python3 -m myenv venv
 source venv\bin\activate
 pip install -r requirements.txt
 ```
-## Step-by-step project description
+## Project description
 ### 1. Airtable
 #### Installation
 ```
