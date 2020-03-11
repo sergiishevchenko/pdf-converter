@@ -10,12 +10,12 @@ source venv\bin\activate
 pip install -r requirements.txt
 ```
 ## Step-by-step project description
-### 1 Airtable
-Installation
+### 1. Airtable
+#### Installation
 ```
 pip install airtable-python-wrapper
 ```
-Airtable Class Instance
+#### Airtable Class Instance
 
 Authentication is handled by the Airtable class. 
 The class can handle authentication automatically if the environment variable AIRTABLE_API_KEY is set with your api key.
@@ -32,4 +32,65 @@ You can also use this class to handle authentication for you if you are making y
 ```
 >>> auth = AirtableAuth(api_key)
 >>> response = requests.get('https://api.airtable.com/v0/{basekey}/{table_name}', auth=auth)
+```
+### 2. Creation template of diploma by HTML + SASS + CSS.
+### 3. PDFKIT
+It's wkhtmltopdf python wrapper to convert html to pdf using the webkit rendering engine and qt.
+#### Install python-pdfkit
+```
+$ pip install pdfkit
+```
+#### Install wkhtmltopdf:
+```
+pip install wkhtmltopdf
+```
+#### Usage
+For simple tasks:
+```
+import pdfkit
+
+pdfkit.from_url('http://google.com', 'out.pdf')
+pdfkit.from_file('test.html', 'out.pdf')
+pdfkit.from_string('Hello!', 'out.pdf')
+```
+You can pass a list with multiple URLs or files:
+```
+pdfkit.from_url(['google.com', 'yandex.ru', 'engadget.com'], 'out.pdf')
+pdfkit.from_file(['file1.html', 'file2.html'], 'out.pdf')
+```
+If you wish to further process generated PDF, you can read it to a variable:
+```
+# Use False instead of output path to save pdf to a variable
+pdf = pdfkit.from_url('http://google.com', False)
+```
+You can specify all wkhtmltopdf options.
+```
+options = {
+    'page-size': 'Letter',
+    'margin-top': '0.75in',
+    'margin-right': '0.75in',
+    'margin-bottom': '0.75in',
+    'margin-left': '0.75in',
+    'encoding': "UTF-8",
+    'custom-header' : [
+        ('Accept-Encoding', 'gzip')
+    ]
+    'cookie': [
+        ('cookie-name1', 'cookie-value1'),
+        ('cookie-name2', 'cookie-value2'),
+    ],
+    'no-outline': None
+}
+
+pdfkit.from_url('http://google.com', 'out.pdf', options=options)
+```
+#### Configuration
+Each API call takes an optional configuration paramater. This should be an instance of pdfkit.configuration() API call. It takes the configuration options as initial paramaters. The available options are:
+
+wkhtmltopdf - the location of the wkhtmltopdf binary. By default pdfkit will attempt to locate this using which (on UNIX type systems) or where (on Windows).
+meta_tag_prefix - the prefix for pdfkit specific meta tags - by default this is pdfkit-
+Example - for when wkhtmltopdf is not on $PATH:
+```
+config = pdfkit.configuration(wkhtmltopdf='/opt/bin/wkhtmltopdf')
+pdfkit.from_string(html_string, output_file, configuration=config)
 ```
