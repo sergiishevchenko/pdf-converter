@@ -5,3 +5,5 @@ install:
   - pip install -r requirements.txt
 script:
   - flake8 . --ignore=F841,W503,E126,E123,E501,E127,47,335,334,333,321,841
+after_success:
+  - coveralls
