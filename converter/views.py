@@ -3,6 +3,8 @@ from django.shortcuts import render
 from converter.config import base_key, api_key
 import pdfkit
 from django.template.loader import get_template
+from datetime import datetime
+import locale
 
 
 def init(request):
@@ -15,6 +17,9 @@ def init(request):
             name = script['fields']['Имя']
             surname = script['fields']['Фамилия']
             date = script['fields']['Дата']
+            date = datetime.strptime(date, "%Y-%m-%d")
+            locale.setlocale(locale.LC_TIME, "ru_RU")
+            date = datetime.strftime(date, "%d %B %Y")
             html = render(request, 'diploma.html', {'name': name, 'surname': surname, 'date': date})
             result = (html.content).decode('utf-8')
             config = pdfkit.configuration(wkhtmltopdf='/usr/local/bin/wkhtmltopdf')
